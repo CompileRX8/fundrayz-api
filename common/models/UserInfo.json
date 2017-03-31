@@ -5,7 +5,8 @@
     "postgresql": {
       "schema": "public",
       "table": "user_info"
-    }
+    },
+    "relations": {}
   },
   "properties": {
     "id": {

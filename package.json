@@ -3,12 +3,17 @@
   "version": "1.0.0",
   "main": "server/server.js",
   "engines": {
-    "node": ">=4"
+    "node": "5.9.1"
   },
   "scripts": {
+    "build": "tsc -p .",
+    "build:watch": "tsc -p . -w",
     "lint": "eslint .",
+    "prestart": "npm run build",
     "start": "node .",
-    "posttest": "npm run lint && nsp check"
+    "posttest": "npm run lint && nsp check",
+    "pregenschema": "npm run build",
+    "genschema": "node server/bin/discover-model.js"
   },
   "dependencies": {
     "compression": "^1.0.3",
@@ -22,14 +27,16 @@
     "strong-error-handler": "^2.0.0"
   },
   "devDependencies": {
+    "@types/node": "^7.0.12",
     "eslint": "^3.17.1",
     "eslint-config-loopback": "^8.0.0",
-    "nsp": "^2.1.0"
+    "nsp": "^2.1.0",
+    "typescript": "^2.2.2"
   },
   "repository": {
-    "type": "",
-    "url": ""
+    "type": "git",
+    "url": "git@github:CompileRX8/fundrayz-api.git"
   },
-  "license": "UNLICENSED",
-  "description": "fundrayz-api"
+  "license": "ISC",
+  "description": "FundRayz API using LoopBack, Auth0, and TypeScript"
 }

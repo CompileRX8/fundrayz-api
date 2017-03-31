@@ -5,6 +5,13 @@
     "postgresql": {
       "schema": "public",
       "table": "event"
+    },
+    "relations": {
+      "organization": {
+        "model": "Organization",
+        "type": "belongsTo",
+        "foreignKey": "orgId"
+      }
     }
   },
   "properties": {

@@ -5,6 +5,18 @@
     "postgresql": {
       "schema": "public",
       "table": "item_donation"
+    },
+    "relations": {
+      "userInfo": {
+        "model": "UserInfo",
+        "type": "belongsTo",
+        "foreignKey": "person"
+      },
+      "item": {
+        "model": "Item",
+        "type": "belongsTo",
+        "foreignKey": "itemId"
+      }
     }
   },
   "properties": {

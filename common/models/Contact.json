@@ -5,6 +5,23 @@
     "postgresql": {
       "schema": "public",
       "table": "contact"
+    },
+    "relations": {
+      "organization": {
+        "model": "Organization",
+        "type": "belongsTo",
+        "foreignKey": "orgId"
+      },
+      "userInfo": {
+        "model": "UserInfo",
+        "type": "belongsTo",
+        "foreignKey": "person"
+      },
+      "userRole": {
+        "model": "UserRole",
+        "type": "belongsTo",
+        "foreignKey": "userRole"
+      }
     }
   },
   "properties": {

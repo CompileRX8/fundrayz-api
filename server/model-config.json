@@ -75,6 +75,10 @@
     "dataSource": "fundrayz-db",
     "public": true
   },
+  "Supporter": {
+    "dataSource": "fundrayz-db",
+    "public": true
+  },
   "UserInfo": {
     "dataSource": "fundrayz-db",
     "public": false

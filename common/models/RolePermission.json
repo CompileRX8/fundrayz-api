@@ -5,6 +5,13 @@
     "postgresql": {
       "schema": "public",
       "table": "role_permission"
+    },
+    "relations": {
+      "userRole": {
+        "model": "UserRole",
+        "type": "belongsTo",
+        "foreignKey": "roleId"
+      }
     }
   },
   "properties": {

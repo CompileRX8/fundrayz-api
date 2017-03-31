@@ -1,12 +1,18 @@
 {
-  "name": "Organization",
+  "name": "Supporter",
   "options": {
     "idInjection": false,
     "postgresql": {
       "schema": "public",
-      "table": "organization"
+      "table": "supporter"
     },
-    "relations": {}
+    "relations": {
+      "organization": {
+        "model": "Organization",
+        "type": "belongsTo",
+        "foreignKey": "orgId"
+      }
+    }
   },
   "properties": {
     "id": {
@@ -27,7 +33,7 @@
     },
     "name": {
       "type": "String",
-      "required": true,
+      "required": false,
       "length": null,
       "precision": null,
       "scale": null,
@@ -37,7 +43,22 @@
         "dataLength": null,
         "dataPrecision": null,
         "dataScale": null,
-        "nullable": "NO"
+        "nullable": "YES"
+      }
+    },
+    "orgId": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 64,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "org_id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": 64,
+        "dataScale": 0,
+        "nullable": "YES"
       }
     },
     "metadata": {

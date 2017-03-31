@@ -5,6 +5,18 @@
     "postgresql": {
       "schema": "public",
       "table": "work_schedule"
+    },
+    "relations": {
+      "event": {
+        "model": "Event",
+        "type": "belongsTo",
+        "foreignKey": "eventId"
+      },
+      "userInfo": {
+        "model": "UserInfo",
+        "type": "belongsTo",
+        "foreignKey": "worker"
+      }
     }
   },
   "properties": {

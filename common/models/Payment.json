@@ -5,6 +5,18 @@
     "postgresql": {
       "schema": "public",
       "table": "payment"
+    },
+    "relations": {
+      "organization": {
+        "model": "Organization",
+        "type": "belongsTo",
+        "foreignKey": "orgId"
+      },
+      "userInfo": {
+        "model": "UserInfo",
+        "type": "belongsTo",
+        "foreignKey": "payer"
+      }
     }
   },
   "properties": {

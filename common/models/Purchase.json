@@ -5,6 +5,18 @@
     "postgresql": {
       "schema": "public",
       "table": "purchase"
+    },
+    "relations": {
+      "userInfo": {
+        "model": "UserInfo",
+        "type": "belongsTo",
+        "foreignKey": "purchaser"
+      },
+      "item": {
+        "model": "Item",
+        "type": "belongsTo",
+        "foreignKey": "itemId"
+      }
     }
   },
   "properties": {
