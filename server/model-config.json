@@ -34,5 +34,57 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "Organization": {
+    "dataSource": "fundrayz-db",
+    "public": true
+  },
+  "Event": {
+    "dataSource": "fundrayz-db",
+    "public": true
+  },
+  "Bid": {
+    "dataSource": "fundrayz-db",
+    "public": false
+  },
+  "Contact": {
+    "dataSource": "fundrayz-db",
+    "public": false
+  },
+  "Donation": {
+    "dataSource": "fundrayz-db",
+    "public": false
+  },
+  "Item": {
+    "dataSource": "fundrayz-db",
+    "public": false
+  },
+  "ItemDonation": {
+    "dataSource": "fundrayz-db",
+    "public": false
+  },
+  "Payment": {
+    "dataSource": "fundrayz-db",
+    "public": false
+  },
+  "Purchase": {
+    "dataSource": "fundrayz-db",
+    "public": false
+  },
+  "RolePermission": {
+    "dataSource": "fundrayz-db",
+    "public": true
+  },
+  "UserInfo": {
+    "dataSource": "fundrayz-db",
+    "public": false
+  },
+  "UserRole": {
+    "dataSource": "fundrayz-db",
+    "public": true
+  },
+  "WorkSchedule": {
+    "dataSource": "fundrayz-db",
+    "public": false
   }
 }
