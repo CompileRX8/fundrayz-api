@@ -1,0 +1,19 @@
+{
+  "name": "fundrayz-api",
+  "version": "1.0.0",
+  "description": "FundRayz API using Loopback, Auth0, and TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/CompileRX8/fundrayz-api.git"
+  },
+  "author": "Ryan Highley <ryanthighley@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CompileRX8/fundrayz-api/issues"
+  },
+  "homepage": "https://github.com/CompileRX8/fundrayz-api#readme"
+}
