@@ -13,6 +13,119 @@ SET check_function_bodies = false;
 SET client_min_messages = warning;
 SET row_security = off;
 
+SET search_path = public, pg_catalog;
+
+ALTER TABLE IF EXISTS ONLY public.work_schedule DROP CONSTRAINT IF EXISTS work_schedule_worker_fkey;
+ALTER TABLE IF EXISTS ONLY public.work_schedule DROP CONSTRAINT IF EXISTS work_schedule_event_id_fkey;
+ALTER TABLE IF EXISTS ONLY public.supporter DROP CONSTRAINT IF EXISTS supporter_org_id_fkey;
+ALTER TABLE IF EXISTS ONLY public.role_permission DROP CONSTRAINT IF EXISTS role_permission_role_id_fkey;
+ALTER TABLE IF EXISTS ONLY public.purchase DROP CONSTRAINT IF EXISTS purchase_purchaser_fkey;
+ALTER TABLE IF EXISTS ONLY public.purchase DROP CONSTRAINT IF EXISTS purchase_item_id_fkey;
+ALTER TABLE IF EXISTS ONLY public.purchase DROP CONSTRAINT IF EXISTS purchase_cashier_fkey;
+ALTER TABLE IF EXISTS ONLY public.payment DROP CONSTRAINT IF EXISTS payment_payer_fkey;
+ALTER TABLE IF EXISTS ONLY public.payment DROP CONSTRAINT IF EXISTS payment_org_id_fkey;
+ALTER TABLE IF EXISTS ONLY public.payment DROP CONSTRAINT IF EXISTS payment_cashier_fkey;
+ALTER TABLE IF EXISTS ONLY public.item DROP CONSTRAINT IF EXISTS item_event_id_fkey;
+ALTER TABLE IF EXISTS ONLY public.item_donation DROP CONSTRAINT IF EXISTS item_donation_person_fkey;
+ALTER TABLE IF EXISTS ONLY public.item_donation DROP CONSTRAINT IF EXISTS item_donation_item_id_fkey;
+ALTER TABLE IF EXISTS ONLY public.event DROP CONSTRAINT IF EXISTS event_org_id_fkey;
+ALTER TABLE IF EXISTS ONLY public.donation DROP CONSTRAINT IF EXISTS donation_payer_fkey;
+ALTER TABLE IF EXISTS ONLY public.donation DROP CONSTRAINT IF EXISTS donation_org_id_fkey;
+ALTER TABLE IF EXISTS ONLY public.donation DROP CONSTRAINT IF EXISTS donation_cashier_fkey;
+ALTER TABLE IF EXISTS ONLY public.contact DROP CONSTRAINT IF EXISTS contact_user_role_fkey;
+ALTER TABLE IF EXISTS ONLY public.contact DROP CONSTRAINT IF EXISTS contact_person_fkey;
+ALTER TABLE IF EXISTS ONLY public.contact DROP CONSTRAINT IF EXISTS contact_org_id_fkey;
+ALTER TABLE IF EXISTS ONLY public.bid DROP CONSTRAINT IF EXISTS bid_item_id_fkey;
+ALTER TABLE IF EXISTS ONLY public.bid DROP CONSTRAINT IF EXISTS bid_cashier_fkey;
+ALTER TABLE IF EXISTS ONLY public.bid DROP CONSTRAINT IF EXISTS bid_bidder_fkey;
+DROP INDEX IF EXISTS public.work_schedule_worker_idx;
+DROP INDEX IF EXISTS public.work_schedule_event_id_idx;
+DROP INDEX IF EXISTS public.purchase_purchaser_idx;
+DROP INDEX IF EXISTS public.purchase_item_id_idx;
+DROP INDEX IF EXISTS public.purchase_cashier_idx;
+DROP INDEX IF EXISTS public.payment_payer_idx;
+DROP INDEX IF EXISTS public.payment_org_id_payer_idx;
+DROP INDEX IF EXISTS public.payment_cashier_idx;
+DROP INDEX IF EXISTS public.item_donation_item_id_idx;
+DROP INDEX IF EXISTS public.event_org_id_name_campaign_key;
+DROP INDEX IF EXISTS public.donation_payer_idx;
+DROP INDEX IF EXISTS public.donation_org_id_payer_idx;
+DROP INDEX IF EXISTS public.donation_cashier_idx;
+DROP INDEX IF EXISTS public.bid_item_id_idx;
+DROP INDEX IF EXISTS public.bid_cashier_idx;
+DROP INDEX IF EXISTS public.bid_bidder_idx;
+ALTER TABLE IF EXISTS ONLY public.work_schedule DROP CONSTRAINT IF EXISTS work_schedule_pkey;
+ALTER TABLE IF EXISTS ONLY public.user_role DROP CONSTRAINT IF EXISTS user_role_pkey;
+ALTER TABLE IF EXISTS ONLY public.user_role DROP CONSTRAINT IF EXISTS user_role_name_key;
+ALTER TABLE IF EXISTS ONLY public.user_info DROP CONSTRAINT IF EXISTS user_info_pkey;
+ALTER TABLE IF EXISTS ONLY public.user_info DROP CONSTRAINT IF EXISTS user_info_id_token_key;
+ALTER TABLE IF EXISTS ONLY public.supporter DROP CONSTRAINT IF EXISTS supporter_pkey;
+ALTER TABLE IF EXISTS ONLY public.role_permission DROP CONSTRAINT IF EXISTS role_permission_pkey;
+ALTER TABLE IF EXISTS ONLY public.purchase DROP CONSTRAINT IF EXISTS purchase_pkey;
+ALTER TABLE IF EXISTS ONLY public.payment DROP CONSTRAINT IF EXISTS payment_pkey;
+ALTER TABLE IF EXISTS ONLY public.organization DROP CONSTRAINT IF EXISTS organization_pkey;
+ALTER TABLE IF EXISTS ONLY public.organization DROP CONSTRAINT IF EXISTS organization_name_key;
+ALTER TABLE IF EXISTS ONLY public.item DROP CONSTRAINT IF EXISTS item_pkey;
+ALTER TABLE IF EXISTS ONLY public.item DROP CONSTRAINT IF EXISTS item_event_id_item_number_key;
+ALTER TABLE IF EXISTS ONLY public.item_donation DROP CONSTRAINT IF EXISTS item_donation_pkey;
+ALTER TABLE IF EXISTS ONLY public.event DROP CONSTRAINT IF EXISTS event_pkey;
+ALTER TABLE IF EXISTS ONLY public.donation DROP CONSTRAINT IF EXISTS donation_pkey;
+ALTER TABLE IF EXISTS ONLY public.contact DROP CONSTRAINT IF EXISTS contact_person_org_id_key;
+ALTER TABLE IF EXISTS ONLY public.bid DROP CONSTRAINT IF EXISTS bid_pkey;
+ALTER TABLE IF EXISTS public.work_schedule ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.user_info ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.supporter ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.purchase ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.payment ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.organization ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.item_donation ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.item ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.event ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.donation ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.bid ALTER COLUMN id DROP DEFAULT;
+DROP SEQUENCE IF EXISTS public.work_schedule_id_seq;
+DROP TABLE IF EXISTS public.work_schedule;
+DROP TABLE IF EXISTS public.user_role;
+DROP SEQUENCE IF EXISTS public.user_info_id_seq;
+DROP TABLE IF EXISTS public.user_info;
+DROP SEQUENCE IF EXISTS public.supporter_id_seq;
+DROP TABLE IF EXISTS public.supporter;
+DROP TABLE IF EXISTS public.role_permission;
+DROP SEQUENCE IF EXISTS public.purchase_id_seq;
+DROP TABLE IF EXISTS public.purchase;
+DROP SEQUENCE IF EXISTS public.payment_id_seq;
+DROP TABLE IF EXISTS public.payment;
+DROP SEQUENCE IF EXISTS public.organization_id_seq;
+DROP TABLE IF EXISTS public.organization;
+DROP SEQUENCE IF EXISTS public.item_id_seq;
+DROP SEQUENCE IF EXISTS public.item_donation_id_seq;
+DROP TABLE IF EXISTS public.item_donation;
+DROP TABLE IF EXISTS public.item;
+DROP SEQUENCE IF EXISTS public.event_id_seq;
+DROP TABLE IF EXISTS public.event;
+DROP SEQUENCE IF EXISTS public.donation_id_seq;
+DROP TABLE IF EXISTS public.donation;
+DROP TABLE IF EXISTS public.contact;
+DROP SEQUENCE IF EXISTS public.bid_id_seq;
+DROP TABLE IF EXISTS public.bid;
+DROP EXTENSION IF EXISTS plpgsql;
+DROP SCHEMA IF EXISTS public;
+--
+-- Name: public; Type: SCHEMA; Schema: -; Owner: postgres
+--
+
+CREATE SCHEMA public;
+
+
+ALTER SCHEMA public OWNER TO postgres;
+
+--
+-- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: postgres
+--
+
+COMMENT ON SCHEMA public IS 'standard public schema';
+
+
 --
 -- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
 --
