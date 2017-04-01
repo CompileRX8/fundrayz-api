@@ -26,4 +26,23 @@ boot(app, __dirname, function(err) {
     app.start();
   }
 });
+/*
+var loopbackPassport = require('loopback-component-passport');
+var PassportConfigurator = loopbackPassport.PassportConfigurator;
+var passportConfigurator = new PassportConfigurator(app);
+var providerConfigs = {};
+try {
+  providerConfigs = require('./providers.json');
+} catch(err) {
+  console.trace(err);
+  process.exit(1);
+}
 
+passportConfigurator.init();
+//passportConfigurator.setupModels({});
+for(var configName in config) {
+  var config = providerConfigs[configName];
+  config.session = config.session !== false;
+  passportConfigurator.configureProvider(configName, config);
+}
+*/

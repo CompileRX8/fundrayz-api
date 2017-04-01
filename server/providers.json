@@ -1,0 +1,14 @@
+{
+  "auth0": {
+    "provider": "auth0",
+    "module": "passport-auth0",
+    "strategy": "Auth0Strategy",
+    "clientID": "",
+    "clientSecret": "",
+    "callbackURL": "",
+    "authPath": "",
+    "callbackPath": "",
+    "successRedirect": "",
+    "scope": ["email", "profile"]
+  }
+}

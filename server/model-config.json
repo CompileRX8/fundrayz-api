@@ -45,31 +45,31 @@
   },
   "Bid": {
     "dataSource": "fundrayz-db",
-    "public": false
+    "public": true
   },
   "Contact": {
     "dataSource": "fundrayz-db",
-    "public": false
+    "public": true
   },
   "Donation": {
     "dataSource": "fundrayz-db",
-    "public": false
+    "public": true
   },
   "Item": {
     "dataSource": "fundrayz-db",
-    "public": false
+    "public": true
   },
   "ItemDonation": {
     "dataSource": "fundrayz-db",
-    "public": false
+    "public": true
   },
   "Payment": {
     "dataSource": "fundrayz-db",
-    "public": false
+    "public": true
   },
   "Purchase": {
     "dataSource": "fundrayz-db",
-    "public": false
+    "public": true
   },
   "RolePermission": {
     "dataSource": "fundrayz-db",
@@ -81,7 +81,7 @@
   },
   "UserInfo": {
     "dataSource": "fundrayz-db",
-    "public": false
+    "public": true
   },
   "UserRole": {
     "dataSource": "fundrayz-db",
@@ -89,6 +89,6 @@
   },
   "WorkSchedule": {
     "dataSource": "fundrayz-db",
-    "public": false
+    "public": true
   }
 }
